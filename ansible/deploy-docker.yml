@@ -1,0 +1,24 @@
+---
+- name: Deploy Calculator Docker Container
+  hosts: localhost
+  tasks:
+
+    - name: Pull latest Docker image from Docker Hub
+      community.docker.docker_image:
+        name: vrajnandak/scientific-calculator
+        tag: latest
+        source: pull
+
+    - name: Stop existing container if running
+      community.docker.docker_container:
+        name: scientific-calculator
+        state: absent
+        force_kill: yes
+
+    - name: Run Docker container in attached mode
+      community.docker.docker_container:
+        name: scientific-calculator
+        image: vrajnandak/scientific-calculator:latest
+        state: started
+        interactive: yes
+        tty: yes

@@ -47,6 +47,14 @@ pipeline {
                 }
             }
         }
+
+	stage('Deploy via Ansible') {
+            steps {
+                echo 'Running Ansible playbook to deploy Docker container...'
+                sh 'ansible-playbook ansible/deploy-docker.yml'
+            }
+        }        
+
     }
     
     post {
