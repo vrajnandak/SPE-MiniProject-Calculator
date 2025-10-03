@@ -8,18 +8,15 @@ pipeline {
             }
         }
 
-        stage('List Files') {
+        stage('Build') {
             steps {
-                echo "Listing all files in the repository..."
-                sh 'ls -R'
+                sh 'mvn clean package'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Running tests...'
-                // Example if you have Python tests:
-                // sh 'python3 -m unittest discover -s tests'
+                sh 'mvn test'
             }
         }
     }
