@@ -20,5 +20,5 @@
         name: scientific-calculator
         image: vrajnandak/scientific-calculator:latest
         state: started
+        restart: yes
         interactive: yes
-        tty: yes
