@@ -115,9 +115,9 @@ pipeline {
                     subject: "📦 ${jobName} #${buildNumber} - ${status.toUpperCase()}",
                     body: body,
                     mimeType: 'text/html',
-                    to: "rlshah03@gmail.com",
-		    from: "jenkins@yourserver.com",
-		    replyTo: "jenkins@yourserver.com"
+                    to: "vrajnandaknangunoori@gmail.com",
+		    from: "vrajnandaknangunoori@gmail.com",
+		    replyTo: "vrajnandaknangunoori@gmail.com"
 	    )
 
                 echo "✅ Email notification sent for build #${buildNumber} (${status})."
